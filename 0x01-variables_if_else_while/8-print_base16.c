@@ -1,25 +1,26 @@
-/*
- * File: 8-print_base16.c
- * Auth: Brennan D Baraban
- */
-
 #include <stdio.h>
 
 /**
- * main - Prints all the numbers of base 16 in lowercase.
- *
- * Return: Always 0.
+ *main - prints hexadecimal base 0123456789abcdef, using putchar
+ *Return: Always 0 (Success)
  */
+
 int main(void)
 {
-	int num;
-	char letter;
+	int n = '0';
+	int a_to_f = 'a';
 
-	for (num = 0; num < 10; num++)
-		putchar((num % 10) + '0');
+	while (n <= '9') /*print 0-9*/
+	{
+		putchar(n);
+		n++;
+	}
 
-	for (letter = 'a'; letter <= 'f'; letter++)
-		putchar(letter);
+	while (a_to_f <= 'f') /*print a-f to finish hexbase*/
+	{
+		putchar(a_to_f);
+		a_to_f++;
+	}
 
 	putchar('\n');
 

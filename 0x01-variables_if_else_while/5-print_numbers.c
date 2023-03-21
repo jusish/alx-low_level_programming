@@ -1,23 +1,20 @@
-/*
- * File: 5-print_numbers.c
- * Auth: Brennan D Baraban
- */
-
 #include <stdio.h>
 
 /**
- * main - Prints all single digit numbers of base 10 starting from 0.
- *
- * Return: Always 0.
+ *main - print 0123456789
+ *Return: Always 0 (Success)
  */
+
 int main(void)
 {
-	int num;
+	int n = 0;
 
-	for (num = 0; num < 10; num++)
-		printf("%d", num);
-
-	printf("\n");
+	while (n < 10)
+	{
+		printf("%i", n);
+		n++;
+	}
+	putchar('\n');
 
 	return (0);
 }

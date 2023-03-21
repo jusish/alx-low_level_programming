@@ -1,36 +1,43 @@
-/*
- * File: 100-print_comb3.c
- * Auth: Brennan D Baraban
- */
-
 #include <stdio.h>
-
 /**
- * main - Prints all possible combinations of two different digits,
- *        in ascending order, separated by a comma followed by a space.
+ * main - Entry point
  *
- * Return: Always 0.
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int digit1, digit2;
-
-	for (digit1 = 0; digit1 < 9; digit1++)
-	{
-		for (digit2 = digit1 + 1; digit2 < 10; digit2++)
-		{
-			putchar((digit1 % 10) + '0');
-			putchar((digit2 % 10) + '0');
-
-			if (digit1 == 8 && digit2 == 9)
-				continue;
-
-			putchar(',');
-			putchar(' ');
-		}
-	}
-
-	putchar('\n');
-
-	return (0);
+int nums;
+int nums1;
+for (nums = '0'; nums < '9'; nums++)
+{
+for (nums1 = '0'; nums1 <= '9'; nums1++)
+{
+if (nums == '0' && nums1 < '1')
+continue;
+if (nums == '1' && nums1 < '2')
+continue;
+if (nums == '2' && nums1 < '3')
+continue;
+if (nums == '3' && nums1 < '4')
+continue;
+if (nums == '4' && nums1 < '5')
+continue;
+if (nums == '5' && nums1 < '6')
+continue;
+if (nums == '6' && nums1 < '7')
+continue;
+if (nums == '7' && nums1 < '8')
+continue;
+if (nums == '8' && nums1 < '9')
+continue;
+putchar(nums);
+putchar(nums1);
+if (nums == '8' && nums1 == '9')
+break;
+putchar(',');
+putchar(' ');
+}
+}
+putchar('\n');
+return (0);
 }
