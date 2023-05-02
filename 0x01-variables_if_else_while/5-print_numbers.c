@@ -1,20 +1,20 @@
 #include <stdio.h>
-
+#include <stdlib.h>
+#include <time.h>
 /**
- *main - print 0123456789
- *Return: Always 0 (Success)
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	int n = 0;
+	int i;
 
-	while (n < 10)
+	for (i = 0; i < 10; i++)
 	{
-		printf("%i", n);
-		n++;
+		printf("%d", i);
 	}
-	putchar('\n');
+	printf("\n");
 
 	return (0);
 }

@@ -1,18 +1,22 @@
 #include "lists.h"
-#include <stddef.h>
 
 /**
-  * list_len - count number of nodes in a list_t
-  * @h: head node
-  * Return: Length of list_t (number)
-  */
+ * list_len - Finds the number of elements in
+ *            a linked list_t list.
+ * @h: The linked list_t list.
+ * @elements: a counter var for size_t (nodes)
+ *
+ * Return: The number of elements in h.
+ */
 size_t list_len(const list_t *h)
 {
-	unsigned int size;
-	const list_t *tmp;
+	size_t elements = 0;
 
-	tmp = h, size = 0;
-	while (tmp)
-		size++, tmp = tmp->next;
-	return (size);
+	while (h)
+	{
+		elements++;
+		h = h->next;
+	}
+
+	return (elements);
 }

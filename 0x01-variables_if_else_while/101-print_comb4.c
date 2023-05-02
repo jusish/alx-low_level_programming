@@ -1,34 +1,39 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+/* more headers goes there */
 
 /**
- *main - print all combinations of three different digits
- *Return: Always 0 (Success)
+ * main - random number to the variable n
+ * compare n to zero and return n
+ * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	int one;
-	int ten;
-	int hundred;
+	int i;
+	int j;
+	int k;
 
-	for (hundred = '0'; hundred <= '9'; hundred++) /*hundreds place*/
+	for (i = 0; i <= 7; i++)
 	{
-		for (ten = (hundred + 1); ten <= '9'; ten++) /*tens=100s+1*/
+		for (j = 1; j <= 8; j++)
 		{
-			for (one = (ten + 1); one <= '9'; one++) /*ones*/
+			for (k = 0; k <= 9; k++)
 			{
-				putchar(hundred);
-				putchar(ten);
-				putchar(one);
-				if (hundred != '7' || ten != '8' || one != '9')
+				if (i < j && j < k)
 				{
-					putchar(',');
-					putchar(' ');
+					putchar('0' + i);
+					putchar('0' + j);
+					putchar('0' + k);
+					if (i != 7 || j != 8 || k != 9)
+					{
+						putchar(',');
+						putchar(' ');
+					}
 				}
 			}
 		}
 	}
 	putchar('\n');
-
 	return (0);
 }

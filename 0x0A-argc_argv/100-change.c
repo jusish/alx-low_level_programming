@@ -1,44 +1,63 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "main.h"
+int change(int cents);
 /**
- * main - Entry point
- * description: prints the minimum number of coins
- * @argument_count: amount of arguments
- * @argument_values: the array of arguments
+ * main - Entry Point
+ * @argc: arguments
+ * @argv: array pointing to arguments
  * Return: 0
  */
-int main(int argument_count, char *argument_values[])
+int main(int argc, char *argv[])
 {
-	int i, coins, cents, num_denom;
-	int denominations[] = {25, 10, 5, 2, 1};
-	/* Coin Denominations available */
-	if (argument_count != 2)
-	{
-		printf("Error\n");
-		return (1);
-		/* Check for correct no. of arguments */
-	}
-
-	cents = atoi(argument_values[1]);
-	/* Converts argument to Int */
-	if (cents < 0)
-	{
-		printf("0\n");
-		return (0);
-		/* Check for -ve input */
-	}
-	coins = 0;
-	num_denom = sizeof(denominations) / sizeof(denominations[0]);
-	/* Number of denominations */
-
-	for (i = 0; i < num_denom; i++)
-	{
-		coins += cents / denominations[i];
-		/* Add no of coins for current denomination */
-		cents %= denominations[i];
-		/* What is the remaining denominations */
-	}
-	printf("%d\n", coins); /* Minimum no of coins */
-	return (0);
+if (argc != 2)
+{
+printf("%s\n", "Error");
+return (1);
+}
+else if (argc < 0)
+{
+return (0);
+}
+printf("%d\n", change(atoi(argv[1])));
+return (0);
+}
+/**
+ * change - get change
+ * @cents: amount of coins from main function
+ * Return: change
+ */
+int change(int cents)
+{
+int q = 25, d = 10, n = 5, t = 2, p = 1;
+int coins;
+while (cents > 0)
+{
+while (cents >= q)
+{
+cents -= q;
+coins++;
+}
+while (cents >= d)
+{
+cents -= d;
+coins++;
+}
+while (cents >= n)
+{
+cents -= n;
+coins++;
+}
+while (cents >= t)
+{
+cents -= t;
+coins++;
+}
+while (cents >= p)
+{
+cents -= p;
+coins++;
+}
+}
+return (coins);
 }

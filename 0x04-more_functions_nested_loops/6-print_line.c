@@ -1,23 +1,21 @@
-#include "main.h"
+#include <stdio.h>
+
 /**
- * print_line - print a line
- * @n: says how many lines this functions is going to print
- * Return: the restive cantity of lines
+ * print_line - Draws a straight line using the character _.
+ * @n: The number of _ characters to be printed.
  */
+
 void print_line(int n)
 {
-	int i;
-
-	if (!(n <= 0))
-	{
-		for (i = 0; i < n; i++)
-		{
-			_putchar('_');
-		}
-		_putchar('\n');
-	}
-	else
-	{
-		_putchar('\n');
-	}
+if (n <= 0)
+{
+putchar('\n');
+return;
+}
+while (n--)
+{
+putchar('_');
+}
+putchar('\n');
+return;
 }

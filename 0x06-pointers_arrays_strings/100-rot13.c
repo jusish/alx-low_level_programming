@@ -1,27 +1,30 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * rot13 - encodes a string using rot13
- * @str: pointer to a string
- * Return: a string
+ * rot13 - encoder rot13
+ * @s: pointer to string params
+ *
+ * Return: *s
  */
-char *rot13(char *str)
+
+char *rot13(char *s)
 {
 	int i;
 	int j;
-	char *s1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char *s2 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; s1[j] != '\0'; j++)
+		for (j = 0; j < 52; j++)
 		{
-			if (str[i] == s1[j])
+			if (s[i] == data1[j])
 			{
-				str[i] = s2[j];
+				s[i] = datarot[j];
 				break;
 			}
 		}
 	}
-	return (str);
+	return (s);
 }

@@ -1,23 +1,25 @@
 #include <stdio.h>
-
+#include <stdlib.h>
+#include <time.h>
 /**
- *main - print lowercase alpha a-z but remove 'q' and 'e'
- *Return: Always 0 (Success)
+ * main -Entry point
+ *
+ * Return: ALWAYS 0 (Success)
  */
-
 int main(void)
 {
-	char alpha = 'a';
+	char low, e, q;
 
-	while (alpha <= 'z')
+	e = 'e';
+	q = 'q';
+
+	for (low = 'a'; low <= 'z'; low++)
 	{
-		if ((alpha != 'q') && (alpha != 'e'))
+		if (low != e && low != q)
 		{
-			putchar(alpha);
+			putchar(low);
 		}
-		alpha++;
 	}
-	putchar('\n');
-
+		printf("\n");
 	return (0);
 }

@@ -1,26 +1,26 @@
+#include <stdio.h>
 #include "main.h"
 /**
- * print_square - print a #
- * @size: says how many # this function is going to print
- * Return: the respective cantity of #
+ * print_square - Prints a squareusing the character #.
+ * @size: The size of the square.
  */
+
 void print_square(int size)
 {
-	int i, j;
-
-	if (!(size <= 0))
-	{
-		for (i = 1; i <= size; i++)
-		{
-			for (j = 1; j <= size; j++)
-			{
-				_putchar('#');
-			}
-			_putchar('\n');
-		}
-	}
-	else
-	{
-		_putchar('\n');
-	}
+int i, j;
+if (size > 0)
+{
+for (i = 0; i < size; i++)
+{
+for (j = 0; j < size; j++)
+{
+_putchar('#');
+}
+_putchar('\n');
+}
+}
+else
+{
+putchar('\n');
+}
 }
